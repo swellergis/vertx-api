@@ -22,10 +22,10 @@ import java.util.logging.Logger;
 
 public class MainVerticle extends AbstractVerticle {
 
-    private final static Logger LOGGER = Logger.getLogger(MainVerticle.class.getName());
+    private final static Logger LOG = Logger.getLogger(MainVerticle.class.getName());
 
     static {
-        LOGGER.info("Customizing the built-in jackson ObjectMapper...");
+        LOG.info("Customizing the built-in jackson ObjectMapper...");
         var objectMapper = DatabindCodec.mapper();
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.disable(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS);
@@ -37,7 +37,7 @@ public class MainVerticle extends AbstractVerticle {
 
     @Override
     public void start(Promise<Void> startPromise) throws Exception {
-        LOGGER.log(Level.INFO, "Starting HTTP server...");
+        LOG.log(Level.INFO, "Starting HTTP server...");
         setupLogging();
 
         //Create a PgPool instance
