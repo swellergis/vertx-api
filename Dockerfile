@@ -5,17 +5,6 @@ FROM maven:3.6.3-openjdk-17 as builder
 WORKDIR /project
 COPY . /project/
 
-ENV APP_BIND_ADDRESS 0.0.0.0
-ENV APP_BIND_PORT 3000
-#ENV LOGI_BACKEND_HOST 192.168.57.35
-ENV LOGI_BACKEND_HOST atarcdb3.postgres.database.azure.com
-ENV LOGI_BACKEND_PORT 5432
-#ENV KEYCLOAK_BASE_URL https://keycloak.local:8443
-ENV KEYCLOAK_BASE_URL http://auth.local
-ENV KEYCLOAK_REALM vertx
-ENV KEYCLOAK_CLIENT_ID vertx-service
-ENV KEYCLOAK_CLIENT_SECRET ecb85cc5-f90d-4a03-8fac-24dcde57f40c
-
 RUN mvn package -DskipTests -B
 
 # 2nd Docker build stage: copy builder output and configure entry point
