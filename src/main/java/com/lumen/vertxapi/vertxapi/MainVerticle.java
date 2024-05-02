@@ -209,8 +209,8 @@ public class MainVerticle extends AbstractVerticle {
 
             .setSsl(true)
             .setSslMode(SslMode.REQUIRE)
-            .setKeyStoreOptions(new JksOptions().setPath("/home/toor/certs/server.jks").setPassword("changeit"));
-            // .setKeyStoreOptions(new JksOptions().setPath("./server.jks").setPassword("changeit"));
+            // .setKeyStoreOptions(new JksOptions().setPath("/home/toor/certs/server.jks").setPassword("changeit"));
+            .setKeyStoreOptions(new JksOptions().setPath("./server.jks").setPassword("changeit"));
 
         PoolOptions poolOptions = new PoolOptions().setMaxSize(5);
 
