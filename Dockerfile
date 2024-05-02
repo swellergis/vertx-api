@@ -17,7 +17,7 @@ EXPOSE 3000
 WORKDIR $APP_DIR
 COPY --from=builder /project/target/*-fat.jar $APP_DIR/$APP_FILE
 
-COPY --from=builder /project/server.jks $APP_DIR/server.jks
+# COPY --from=builder /project/DigiCertGlobalRootCA.crt.pem $APP_DIR/DigiCertGlobalRootCA.crt.pem
 
 #COPY --from=builder /project/src/main/resources/app-conf.json $APP_DIR/app-conf.json
 

@@ -13,6 +13,7 @@ import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.json.jackson.DatabindCodec;
 import io.vertx.core.net.JksOptions;
+import io.vertx.core.net.PemTrustOptions;
 import io.vertx.ext.auth.JWTOptions;
 import io.vertx.ext.auth.jwt.JWTAuthOptions;
 import io.vertx.ext.auth.oauth2.OAuth2Auth;
@@ -205,12 +206,18 @@ public class MainVerticle extends AbstractVerticle {
             .setHost(logiBackendHost)
             .setDatabase("blogdb")
             .setUser("toor")
-            .setPassword("Oicu812Oicu812")
+            .setPassword("Oicu812Oicu812");
 
-            .setSsl(true)
-            .setSslMode(SslMode.REQUIRE)
-            // .setKeyStoreOptions(new JksOptions().setPath("/home/toor/certs/server.jks").setPassword("changeit"));
-            .setKeyStoreOptions(new JksOptions().setPath("./server.jks").setPassword("changeit"));
+            // // azure atarcdb3
+            // .setSslMode(SslMode.VERIFY_CA)
+            // // .setPemTrustOptions(new PemTrustOptions().addCertPath("/home/toor/Downloads/DigiCertGlobalRootCA.crt.pem"))
+            // .setPemTrustOptions(new PemTrustOptions().addCertPath("./DigiCertGlobalRootCA.crt.pem"))
+            // .setSsl(true);
+
+            // .setSslMode(SslMode.REQUIRE)
+            // .setKeyStoreOptions(new JksOptions().setPath("/home/toor/certs/server.jks").setPassword("changeit"))
+            // .setKeyStoreOptions(new JksOptions().setPath("./server.jks").setPassword("changeit"))
+            // .setSsl(true);
 
         PoolOptions poolOptions = new PoolOptions().setMaxSize(5);
 

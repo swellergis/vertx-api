@@ -16,8 +16,8 @@ services:
       KEYCLOAK_REALM: "vertx"
       KEYCLOAK_CLIENT_ID: "vertx-service"
       KEYCLOAK_CLIENT_SECRET: "ecb85cc5-f90d-4a03-8fac-24dcde57f40c"
-      LOGI_BACKEND_HOST: "atarcdb3.postgres.database.azure.com"
-      # LOGI_BACKEND_HOST: "192.168.57.35"
+      # LOGI_BACKEND_HOST: "atarcdb3.postgres.database.azure.com"
+      LOGI_BACKEND_HOST: "192.168.57.35"
       LOGI_BACKEND_PORT: "5432"
-
-
+    # volumes:
+    #   - /home/toor/Downloads/DigiCertGlobalRootCA.crt.pem:/application/DigiCertGlobalRootCA.crt.pem:ro
