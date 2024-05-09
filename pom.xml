@@ -152,6 +152,26 @@
           </arguments>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <encoding>UTF-8</encoding>
+              <descriptors>
+                <descriptor>${project.basedir}/src/main/assembly/binary_distribution_assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>            
     </plugins>
   </build>
 
