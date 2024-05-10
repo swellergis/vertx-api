@@ -8,7 +8,8 @@ COPY . /project/
 RUN mvn package -DskipTests -B
 
 # 2nd Docker build stage: copy builder output and configure entry point
-FROM openjdk:17-alpine
+# FROM openjdk:17-alpine
+FROM openjdk:17.0.1-jdk-slim
 ENV APP_DIR /application
 ENV APP_FILE container-uber-jar.jar
 

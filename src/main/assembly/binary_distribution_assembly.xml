@@ -43,7 +43,7 @@
             <outputDirectory></outputDirectory>
             <lineEnding>unix</lineEnding>
             <includes>
-                <include>middleware.sh</include>
+                <include>vertxapi.sh</include>
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
