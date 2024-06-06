@@ -8,11 +8,12 @@ services:
     image: vertx-api:dev
     #restart: unless-stopped
     ports:
-      - 3000:3000
+      - 8080:8081
     environment:
       APP_BIND_ADDRESS: "0.0.0.0"
-      APP_BIND_PORT: "3000"
-      KEYCLOAK_BASE_URL: "http://auth.local"
+      APP_BIND_PORT: "8081"
+      # KEYCLOAK_BASE_URL: "http://auth.local"
+      KEYCLOAK_BASE_URL: "http://keycloak.local:3000/auth"
       KEYCLOAK_REALM: "vertx"
       KEYCLOAK_CLIENT_ID: "vertx-service"
       KEYCLOAK_CLIENT_SECRET: "ecb85cc5-f90d-4a03-8fac-24dcde57f40c"
